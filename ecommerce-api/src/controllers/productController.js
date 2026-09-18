@@ -99,3 +99,12 @@ const deleteProduto = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+//* Exporta as funções para serem usadas em outras partes da aplicação
+module.exports = {
+  createProduct,
+  getProdutos,
+  getProdutoById,
+  updateProduto,
+  deleteProduto
+};
