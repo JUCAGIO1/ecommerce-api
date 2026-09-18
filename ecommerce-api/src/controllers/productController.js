@@ -77,3 +77,25 @@ const updateProduto = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+//* Função para deletar um produto
+const deleteProduto = async (req, res) => {
+  try {
+    //* Extrai o ID do produto dos parâmetros da requisição
+    const { id } = req.params;
+
+    //* Deleta o produto do banco de dados usando o modelo Product
+    const produto = await Product.findByIdAndDelete(id);
+
+    //* Verifica se o produto foi encontrado e deletado
+    if (!produto) {
+      return res.status(404).json({ message: "Produto não encontrado" });
+    }
+
+    //* Envia uma resposta de sucesso com o produto deletado
+    res.status(200).json({ message: "Produto deletado com sucesso" });
+  } catch (error) {
+    //* Em caso de erro, envia uma resposta de erro com o status 500 e a mensagem do erro
+    res.status(500).json({ message: error.message });
+  }
+};
