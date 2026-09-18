@@ -33,8 +33,28 @@ const getProdutos = async (req, res) => {
     //* Envia uma resposta de sucesso com os produtos obtidos
     res.status(200).json(produtos);
   } catch (error) {
-    
+
     //* Em caso de erro, envia uma resposta de erro com o status 500 e a mensagem do erro
     res.status(500).json({ message: error.message });
   }
 };
+
+//* Função para obter um produto por ID
+const getProdutoById = async (req, res) => {
+  try {
+    //* Extrai o ID do produto dos parâmetros da requisição
+    const { id } = req.params;
+
+    //* Obtem o produto do banco de dados usando o modelo Product
+    const produto = await Product.findById(id);
+
+    //* Envia uma resposta de sucesso com o produto obtido
+    res.status(200).json(produto);
+  } catch (error) {
+
+    //* Em caso de erro, envia uma resposta de erro com o status 500 e a mensagem do erro
+    res.status(500).json({ message: error.message });
+  }
+};
+
+//* Função para atualizar um produto
