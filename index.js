@@ -3,9 +3,9 @@ const express = require("express");
 //* Importa o cors para permitir requisições de diferentes origens
 const cors = require("cors");
 //* Importa a função de conexão com o banco de dados
-const connectDB = require("./config/db");
+const connectDB = require("./src/config/database");
 //* Importa as rotas da aplicação
-const routes = require("./routes");
+const routes = require("./src/routes/productRoutes");
 
 //* Cria uma instância do express
 const app = express();

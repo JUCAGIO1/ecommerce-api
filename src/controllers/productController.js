@@ -1,7 +1,7 @@
 const Product = require("../models/Product");
 
 //* Criar novo produto
-exports.createProduct = async (req, res) => {
+const createProduct = async (req, res) => {
   try {
     //* Extrai os dados do corpo da requisição
     const { name, description, price, category } = req.body;
