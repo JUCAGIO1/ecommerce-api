@@ -2,6 +2,8 @@ E-Commerce API 🛍️
 
 API RESTful desenvolvida em Node.js, utilizando Express e MongoDB (Mongoose) para gerenciamento de produtos de um e-commerce, com operações completas de CRUD.
 
+Vídeo de demonstração: https://youtu.be/Vreh3ff54ig
+
 🚀 Tecnologias Utilizadas
 
 Node.js
